@@ -9,3 +9,16 @@ They accomplish the same thing as the
 that already exists.
 
 Created as a result of https://github.com/Code4SA/mma-dexter/issues/23
+
+Want to know what it looks like?
+![QueryRadioField in action](./queryradiofield.png)
+
+Want to verify for yourself?
+```
+git clone git@github.com:brookskindle/queryradiofield.git
+cd queryradiofield
+pip install -r requirements.txt
+export FLASK_APP=app.py
+flask run
+# go to http://localhost:5000
+```
