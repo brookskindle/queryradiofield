@@ -19,10 +19,13 @@ QueryRadioField = partial(
     widget=widgets.ListWidget(prefix_label=False),
     option_widget=widgets.RadioInput(),
 )
+QueryCheckboxField = partial(
+    QuerySelectMultipleField,
+    widget=widgets.ListWidget(prefix_label=False),
+    option_widget=widgets.CheckboxInput(),
+)
 
-#
-# Models
-#
+
 class Continent(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True)
@@ -47,9 +50,7 @@ def seed_database(db):
         db.session.add(continent)
     db.session.commit()
 
-#
-# Forms
-#
+
 class ContinentForm(Form):
     select_continents = QuerySelectField(
         "Continents",
@@ -66,19 +67,19 @@ class ContinentForm(Form):
         query_factory=lambda: Continent.query,
         get_label=lambda field: field.name,
     )
+    checkbox_continents = QueryCheckboxField(
+        "Continents",
+        query_factory=lambda: Continent.query,
+        get_label=lambda field: field.name,
+    )
 
-#
-# Routes
-#
+
 @app.route("/")
 def index():
     form = ContinentForm()
     return render_template("index.html", form=form)
 
 
-#
-# Local code execution
-#
 print("Creating database")
 db.create_all()
 print("Seeding database")

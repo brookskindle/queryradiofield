@@ -1,19 +1,23 @@
-<h1>Welcome!</h1>
-
-<h2>Question 1</h2>
-<p>Which continent were you born in? This field is rendered using
+<h2>Pick a continent</h2>
+<p>This field is rendered using
   <a href="http://wtforms.simplecodes.com/docs/0.6/ext.html#module-wtforms.ext.sqlalchemy">wtforms.ext.sqlalchemy.fields.QuerySelectField</a>
 </p>
 {{ form.select_continents() }}
 
-<h2>Question 2</h2>
-<p>Which continents have you visited? This field is rendered using
+<h2>Pick multiple continents</h2>
+<p>This field is rendered using
   <a href="http://wtforms.simplecodes.com/docs/0.6/ext.html#module-wtforms.ext.sqlalchemy">wtforms.ext.sqlalchemy.fields.QuerySelectMultipleField</a>
 </p>
 {{ form.select_multiple_continents() }}
 
-<h2>Question 2</h2>
-<p>Which continent is your favorite? This field is rendered the QueryRadioField
-partial function that is defined within the code.
+<h2>Pick a continent</h2>
+<p>This field is rendered using the QueryRadioField partial function that is
+defined within the code.
 </p>
 {{ form.radio_continents() }}
+
+<h2>Pick multiple continents</h2>
+<p>This field is rendered using the QueryCheckboxField partial function that is
+defined within the code.
+</p>
+{{ form.checkbox_continents() }}
