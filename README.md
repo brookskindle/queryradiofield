@@ -4,13 +4,16 @@ A proof of concept for two classes that I believe
 include:
 * `QueryRadioField`
 * `QueryCheckboxField`
+
 They accomplish the same thing as the
 [`QuerySelectField`](http://wtforms.simplecodes.com/docs/0.6/ext.html#module-wtforms.ext.sqlalchemy)
 that already exists.
 
 Created as a result of https://github.com/Code4SA/mma-dexter/issues/23
 
-Want to know what it looks like?
+---
+
+## Screenshot of basic implementation
 ![QueryRadioField in action](./queryradiofield.png)
 
 Want to verify for yourself?
