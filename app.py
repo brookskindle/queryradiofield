@@ -1,6 +1,6 @@
 from functools import partial
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from wtforms import Form, widgets
 from wtforms.ext.sqlalchemy.fields import (
@@ -57,26 +57,26 @@ class ContinentForm(Form):
         query_factory=lambda: Continent.query,
         get_label=lambda field: field.name,
     )
-    select_multiple_continents = QuerySelectMultipleField(
-        "Continents",
-        query_factory=lambda: Continent.query,
-        get_label=lambda field: field.name,
-    )
-    radio_continents = QueryRadioField(
-        "Continents",
-        query_factory=lambda: Continent.query,
-        get_label=lambda field: field.name,
-    )
-    checkbox_continents = QueryCheckboxField(
-        "Continents",
-        query_factory=lambda: Continent.query,
-        get_label=lambda field: field.name,
-    )
+    #select_multiple_continents = QuerySelectMultipleField(
+    #    "Continents",
+    #    query_factory=lambda: Continent.query,
+    #    get_label=lambda field: field.name,
+    #)
+    #radio_continents = QueryRadioField(
+    #    "Continents",
+    #    query_factory=lambda: Continent.query,
+    #    get_label=lambda field: field.name,
+    #)
+    #checkbox_continents = QueryCheckboxField(
+    #    "Continents",
+    #    query_factory=lambda: Continent.query,
+    #    get_label=lambda field: field.name,
+    #)
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
-    form = ContinentForm()
+    form = ContinentForm(request.form)
     return render_template("index.html", form=form)
 
 

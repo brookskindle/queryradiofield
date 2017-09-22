@@ -1,23 +1,29 @@
-<h2>Pick a continent</h2>
-<p>This field is rendered using
-  <a href="http://wtforms.simplecodes.com/docs/0.6/ext.html#module-wtforms.ext.sqlalchemy">wtforms.ext.sqlalchemy.fields.QuerySelectField</a>
-</p>
-{{ form.select_continents() }}
+<form method=post>
+  <h2>Pick a continent</h2>
+  <p>This field is rendered using
+    <a href="http://wtforms.simplecodes.com/docs/0.6/ext.html#module-wtforms.ext.sqlalchemy">wtforms.ext.sqlalchemy.fields.QuerySelectField</a>
+  </p>
+  {{ form.select_continents() }}
 
-<h2>Pick multiple continents</h2>
-<p>This field is rendered using
-  <a href="http://wtforms.simplecodes.com/docs/0.6/ext.html#module-wtforms.ext.sqlalchemy">wtforms.ext.sqlalchemy.fields.QuerySelectMultipleField</a>
-</p>
-{{ form.select_multiple_continents() }}
+  {#
+  <h2>Pick multiple continents</h2>
+  <p>This field is rendered using
+    <a href="http://wtforms.simplecodes.com/docs/0.6/ext.html#module-wtforms.ext.sqlalchemy">wtforms.ext.sqlalchemy.fields.QuerySelectMultipleField</a>
+  </p>
+  {{ form.select_multiple_continents() }}
 
-<h2>Pick a continent</h2>
-<p>This field is rendered using the QueryRadioField partial function that is
-defined within the code.
-</p>
-{{ form.radio_continents() }}
+  <h2>Pick a continent</h2>
+  <p>This field is rendered using the QueryRadioField partial function that is
+  defined within the code.
+  </p>
+  {{ form.radio_continents() }}
 
-<h2>Pick multiple continents</h2>
-<p>This field is rendered using the QueryCheckboxField partial function that is
-defined within the code.
-</p>
-{{ form.checkbox_continents() }}
+  <h2>Pick multiple continents</h2>
+  <p>This field is rendered using the QueryCheckboxField partial function that is
+  defined within the code.
+  </p>
+  {{ form.checkbox_continents() }}
+  #}
+  <input type=submit value=Register>
+  <button>CLICK ME TO SUBMIT!!!</button>
+</form>
