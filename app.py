@@ -30,6 +30,12 @@ class Continent(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True)
 
+    def __repr__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
+
     def __init__(self, name):
         self.name = name
 
@@ -57,21 +63,21 @@ class ContinentForm(Form):
         query_factory=lambda: Continent.query,
         get_label=lambda field: field.name,
     )
-    #select_multiple_continents = QuerySelectMultipleField(
-    #    "Continents",
-    #    query_factory=lambda: Continent.query,
-    #    get_label=lambda field: field.name,
-    #)
-    #radio_continents = QueryRadioField(
-    #    "Continents",
-    #    query_factory=lambda: Continent.query,
-    #    get_label=lambda field: field.name,
-    #)
-    #checkbox_continents = QueryCheckboxField(
-    #    "Continents",
-    #    query_factory=lambda: Continent.query,
-    #    get_label=lambda field: field.name,
-    #)
+    select_multiple_continents = QuerySelectMultipleField(
+        "Continents",
+        query_factory=lambda: Continent.query,
+        get_label=lambda field: field.name,
+    )
+    radio_continents = QueryRadioField(
+        "Continents",
+        query_factory=lambda: Continent.query,
+        get_label=lambda field: field.name,
+    )
+    checkbox_continents = QueryCheckboxField(
+        "Continents",
+        query_factory=lambda: Continent.query,
+        get_label=lambda field: field.name,
+    )
 
 
 @app.route("/", methods=["GET", "POST"])
